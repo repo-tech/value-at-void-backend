@@ -13,6 +13,9 @@ app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
 connectDB();
 
+app.get('/',(req,res)=>{
+    res.send('Welcome to JobPilot API');
+});
 app.use('/api/auth', authRoutes);
 app.use('/api/jobs', jobRoutes);
 app.use('/api/employer', employerRoutes);
